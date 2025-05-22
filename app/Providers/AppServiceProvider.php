@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Flasher\Prime\Container\FlasherContainer;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Initialize Flasher Container with Laravel's container
+        FlasherContainer::from($this->app);
     }
 }
